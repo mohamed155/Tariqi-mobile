@@ -1,0 +1,51 @@
+page-login {
+  .header {
+
+    &::after {
+      content: unset;
+    }
+
+    .close-btn {
+      width: 36px;
+    }
+  }
+
+  .content {
+    background: color($colors, 'primary');
+  }
+
+  .footer {
+    &::before {
+      content: unset;
+    }
+  }
+
+  .buttons-container {
+    .button {
+      height: 44px;
+    }
+
+    .or-separator {
+      height: 30px;
+      color: color($colors, 'light');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .sep-line {
+        height: 1px;
+        background: color($colors, 'light');
+        display: inline-block;
+        width: 50px;
+      }
+
+      span {
+        margin: 0 10px;
+      }
+    }
+
+    .signup-btn {
+      background: rgba(color($colors, 'light'), 0.1);
+    }
+  }
+}
