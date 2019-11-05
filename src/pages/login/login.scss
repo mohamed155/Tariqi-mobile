@@ -1,4 +1,7 @@
 page-login {
+  background: url("../assets/imgs/bg.gif");
+  background-size: cover;
+
   .header {
 
     &::after {
@@ -11,7 +14,7 @@ page-login {
   }
 
   .content {
-    background: color($colors, 'primary');
+    background: linear-gradient(color($colors, 'primary'), rgba(color($colors, 'primary'), 0.2));
   }
 
   .footer {
@@ -23,6 +26,13 @@ page-login {
   .buttons-container {
     .button {
       height: 44px;
+
+      .icon {
+        position: absolute;
+        left: 12px;
+        color: color($colors, 'light');
+        font-size: 25px;
+      }
     }
 
     .or-separator {
@@ -46,6 +56,12 @@ page-login {
 
     .signup-btn {
       background: rgba(color($colors, 'light'), 0.1);
+    }
+
+    p {
+      color: color($colors, 'light');
+      font-size: 10px;
+      text-align: center;
     }
   }
 }

@@ -12,13 +12,24 @@
 
 <ion-footer padding>
   <div class="buttons-container">
-    <button ion-button block color="facebook" margin-top>Continue with Facebook</button>
-    <button ion-button block margin-top>Continue with Email</button>
+    <button ion-button block color="facebook" margin-top>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Continue with Facebook
+    </button>
+    <button ion-button block margin-top (click)="openHome()">
+      <ion-icon name="md-mail"></ion-icon>
+      Continue with Email
+    </button>
     <div class="or-separator">
       <div class="sep-line"></div>
       <span>Or</span>
       <div class="sep-line"></div>
     </div>
-    <button ion-button outline block color="light" class="signup-btn">Create your account</button>
+    <button ion-button outline block color="light" class="signup-btn">
+      <ion-icon name="md-person-add"></ion-icon>
+      Create your account
+    </button>
+    <p>By creating or logging into an account you're agreeing with our <a href="#">Terms & Condition</a>
+      and <a href="#">Privacy Statement</a> </p>
   </div>
 </ion-footer>

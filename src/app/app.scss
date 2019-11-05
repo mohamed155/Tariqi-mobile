@@ -21,3 +21,28 @@
     text-transform: capitalize;
   }
 }
+
+.toolbar-background-md {
+  background: color($colors, 'primary');
+
+  * {
+    color: color($colors, 'light') !important;
+  }
+}
+
+.bar-button-md {
+  .icon {
+    color: color($colors, 'light');
+  }
+}
+
+.segment-button {
+  text-transform: capitalize !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    margin: 0 10px;
+  }
+}
