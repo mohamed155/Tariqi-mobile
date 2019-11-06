@@ -1,9 +1,20 @@
 page-home {
+
+  ion-menu {
+    top: unset;
+    bottom: 0;
+    height: calc(100vh - 57px);
+  }
+
   .header {
     .title {
       img {
         max-width: 60px;
       }
     }
+  }
+
+  .content {
+
   }
 }

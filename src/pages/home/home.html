@@ -37,17 +37,30 @@
  </ion-navbar>
 </ion-header>
 
-<ion-content #content padding>
+<ion-content #content>
   <ion-segment [(ngModel)]="tabView">
-    <ion-segment-button value="accommodations">
-      <ion-icon name="ios-home-outline"></ion-icon>
-      Accommodations
+    <ion-segment-button value="hotels">
+      Hotels
     </ion-segment-button>
-    <ion-segment-button value="car-rental">
-      <ion-icon name="ios-car-outline"></ion-icon>
-      Car rental
+    <ion-segment-button value="sabre">
+      Sabre
+    </ion-segment-button>
+    <ion-segment-button value="tours">
+      Tours
+    </ion-segment-button>
+    <ion-segment-button value="all-search">
+      All Search
+    </ion-segment-button>
+    <ion-segment-button value="hajj">
+      Hajj
+    </ion-segment-button>
+    <ion-segment-button value="umrah">
+      Umrah
     </ion-segment-button>
   </ion-segment>
+
+  <hotels-form></hotels-form>
+
 </ion-content>
 
 <ion-footer>

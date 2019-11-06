@@ -1,0 +1,19 @@
+hotels-form {
+  .search-section {
+    .search-box {
+      background: color($colors, 'secondary');
+      padding: 4px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+
+      .item {
+        margin-bottom: 5px;
+      }
+
+      .button {
+        margin-bottom: 0;
+        height: 44px;
+      }
+    }
+  }
+}
