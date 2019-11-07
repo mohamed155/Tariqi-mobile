@@ -8,13 +8,19 @@ import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
 import {HotelsForm} from "../components/hotels-form/hotels-form";
+import {CountryModal} from "../components/country-modal/country-modal";
+import {SearchResultsPage} from "../pages/search-results/search-results";
+import {CityModal} from "../components/city-modal/city-modal";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    HotelsForm
+    HotelsForm,
+    CountryModal,
+    SearchResultsPage,
+    CityModal
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,10 @@ import {HotelsForm} from "../components/hotels-form/hotels-form";
     MyApp,
     HomePage,
     LoginPage,
-    HotelsForm
+    HotelsForm,
+    CountryModal,
+    SearchResultsPage,
+    CityModal
   ],
   providers: [
     StatusBar,

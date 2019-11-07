@@ -21,10 +21,14 @@
       <ion-label>Children</ion-label>
       <ion-input type="number"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item (tap)="openCountryModal()">
       <ion-label>Choose Country</ion-label>
       <ion-input></ion-input>
     </ion-item>
-    <button ion-button block>Search</button>
+    <ion-item (tap)="openCityModal()">
+      <ion-label>Choose City</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <button ion-button block (click)="openResults()">Search</button>
   </div>
 </div>

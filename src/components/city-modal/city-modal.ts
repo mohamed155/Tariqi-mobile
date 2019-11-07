@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 
 @Component({
-  selector: 'country-modal',
-  templateUrl: 'country-modal.html'
+  selector: 'city-modal',
+  templateUrl: 'city-modal.html'
 })
-export class CountryModal {
+export class CityModal {
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
 

@@ -59,7 +59,10 @@
     </ion-segment-button>
   </ion-segment>
 
-  <hotels-form></hotels-form>
+  <div [ngSwitch]="tabView">
+    <hotels-form *ngSwitchCase="'hotels'"></hotels-form>
+    <iframe *ngSwitchCase="'sabre'" class="iframe" src="http://elemantours.swbeb.com/"></iframe>
+  </div>
 
 </ion-content>
 
