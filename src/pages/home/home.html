@@ -1,6 +1,12 @@
 <ion-menu [content]="content">
   <ion-content>
-    <ion-list padding-vertical no-lines>
+    <ion-list no-lines>
+      <button ion-item item-start menuClose class="profile-item" (click)="openProfile()">
+        <ion-thumbnail item-start>
+          <ion-icon name="md-contact" class="avatar-logo"></ion-icon>
+        </ion-thumbnail>
+        Guest
+      </button>
       <button ion-item item-start menuClose><ion-icon name="ios-briefcase" margin-right></ion-icon> Booking</button>
       <button ion-item item-start menuClose><ion-icon name="ios-contacts" margin-right></ion-icon> Deals</button>
       <button ion-item item-start menuClose><ion-icon name="md-heart-outline" margin-right></ion-icon> Lists</button>

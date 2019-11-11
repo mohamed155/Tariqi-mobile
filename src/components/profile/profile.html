@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="account-info" text-center padding>
+    <ion-thumbnail>
+      <ion-icon name="md-contact"></ion-icon>
+    </ion-thumbnail>
+    <ion-item text-center no-lines>
+      Guest
+    </ion-item>
+  </div>
+  <ion-list border>
+    <button ion-item (click)="openEditProfile()">
+      <ion-icon name="ios-paper-outline" item-start></ion-icon>
+      Edit profile
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item>
+      <ion-icon name="ios-briefcase-outline" item-start></ion-icon>
+      Booking
+    </button>
+    <button ion-item>
+      <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
+      Reviews
+    </button>
+    <button ion-item>
+      <ion-icon name="md-heart-outline" item-start></ion-icon>
+      Lists
+    </button>
+  </ion-list>
+  <button ion-button clear color="danger" block>Sign out</button>
+</ion-content>

@@ -1,0 +1,21 @@
+page-profile {
+  .account-info {
+    //background: color($colors, 'primary');
+
+    .item {
+      background: transparent ;
+    }
+
+    ion-thumbnail {
+      .icon {
+        font-size: 80px;
+        color: gray;
+      }
+    }
+  }
+
+  .list {
+    border-top: solid 1px #dedede;
+    border-bottom: solid 1px #dedede;
+  }
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {SearchResultsPage} from "../search-results/search-results";
+import {ProfilePage} from "../../components/profile/profile";
 
 @Component({
   selector: 'page-home',
@@ -12,6 +12,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  openProfile() {
+    this.navCtrl.push(ProfilePage);
   }
 
 }

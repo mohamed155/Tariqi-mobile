@@ -11,6 +11,8 @@ import {HotelsForm} from "../components/hotels-form/hotels-form";
 import {CountryModal} from "../components/country-modal/country-modal";
 import {SearchResultsPage} from "../pages/search-results/search-results";
 import {CityModal} from "../components/city-modal/city-modal";
+import {ProfilePage} from "../components/profile/profile";
+import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {CityModal} from "../components/city-modal/city-modal";
     HotelsForm,
     CountryModal,
     SearchResultsPage,
-    CityModal
+    CityModal,
+    ProfilePage,
+    EditProfilePage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import {CityModal} from "../components/city-modal/city-modal";
     HotelsForm,
     CountryModal,
     SearchResultsPage,
-    CityModal
+    CityModal,
+    ProfilePage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,

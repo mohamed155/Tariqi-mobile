@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Public details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+            <ion-icon name="md-contact"></ion-icon>
+          </ion-avatar>
+          <ion-label stacked>Display name</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Date of birth</ion-label>
+          <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
+          <p>We'll show your age range to your guest reviews</p>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Location</ion-label>
+          <ion-select>
+            <ion-option value="egypt">Egypt</ion-option>
+            <ion-option value="egypt">Egypt</ion-option>
+            <ion-option value="egypt">Egypt</ion-option>
+            <ion-option value="egypt">Egypt</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Personal details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label stacked>Title</ion-label>
+        <ion-select>
+          <ion-option value="mr">Mr.</ion-option>
+          <ion-option value="ms">Ms.</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>First name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Last name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Mobile phone</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Gender</ion-label>
+        <ion-select>
+          <ion-option value="mr">Male</ion-option>
+          <ion-option value="ms">Female</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Address</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>City</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label stacked>Country/Region</ion-label>
+            <ion-select>
+              <ion-option value="egypt">Egypt</ion-option>
+              <ion-option value="egypt">Egypt</ion-option>
+              <ion-option value="egypt">Egypt</ion-option>
+              <ion-option value="egypt">Egypt</ion-option>
+              <ion-option value="egypt">Egypt</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label stacked>Zip code</ion-label>
+          <ion-input></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label>Smoking prefer?</ion-label>
+        <ion-checkbox item-end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Business Traveler?</ion-label>
+        <ion-checkbox item-end></ion-checkbox>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Email Addresses</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label item-start>
+          <ion-icon name="md-checkmark-circle" class="email-verify-icon"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
