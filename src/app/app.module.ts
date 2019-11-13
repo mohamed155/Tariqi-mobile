@@ -13,6 +13,7 @@ import {SearchResultsPage} from "../pages/search-results/search-results";
 import {CityModal} from "../components/city-modal/city-modal";
 import {ProfilePage} from "../components/profile/profile";
 import {EditProfilePage} from "../pages/edit-profile/edit-profile";
+import {ItemDetailsPage} from "../pages/item-details/item-details";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
     SearchResultsPage,
     CityModal,
     ProfilePage,
-    EditProfilePage
+    EditProfilePage,
+    ItemDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -40,9 +42,10 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
     SearchResultsPage,
     CityModal,
     ProfilePage,
-    EditProfilePage
+    EditProfilePage,
+    ItemDetailsPage
   ],
-  providers: [
+    providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

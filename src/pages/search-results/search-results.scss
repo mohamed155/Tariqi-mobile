@@ -1,3 +1,41 @@
 page-search-results {
+  .card {
+    display: flex;
 
+    img {
+      max-width: 110px;
+      object-fit: cover;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .rate {
+      color: gold;
+    }
+
+    .location {
+      font-size: 12px;
+    }
+
+    .room-type {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .price {
+      font-size: 22px;
+    }
+
+    .extra {
+      font-size: 10px;
+      color: gray;
+    }
+
+    .warning {
+      font-size: 10px;
+      color: red;
+    }
+  }
 }

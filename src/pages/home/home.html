@@ -48,9 +48,6 @@
     <ion-segment-button value="hotels">
       Hotels
     </ion-segment-button>
-    <ion-segment-button value="sabre">
-      Sabre
-    </ion-segment-button>
     <ion-segment-button value="tours">
       Tours
     </ion-segment-button>
@@ -67,7 +64,6 @@
 
   <div [ngSwitch]="tabView">
     <hotels-form *ngSwitchCase="'hotels'"></hotels-form>
-    <iframe *ngSwitchCase="'sabre'" class="iframe" src="http://elemantours.swbeb.com/"></iframe>
   </div>
 
 </ion-content>
