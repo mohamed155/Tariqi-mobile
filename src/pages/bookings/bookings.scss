@@ -1,0 +1,23 @@
+page-bookings {
+
+  .content {
+    .list {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: gray;
+
+      .icon {
+        font-size: 100px;
+      }
+    }
+  }
+
+  .footer {
+    &::before {
+      content: none;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {ProfilePage} from "../../components/profile/profile";
+import {BookingsPage} from "../bookings/bookings";
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,10 @@ export class HomePage {
 
   openProfile() {
     this.navCtrl.push(ProfilePage);
+  }
+
+  openBookings() {
+    this.navCtrl.push(BookingsPage);
   }
 
 }

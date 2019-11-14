@@ -14,6 +14,8 @@ import {CityModal} from "../components/city-modal/city-modal";
 import {ProfilePage} from "../components/profile/profile";
 import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import {ItemDetailsPage} from "../pages/item-details/item-details";
+import {RoomListPage} from "../pages/room-list/room-list";
+import {BookingsPage} from "../pages/bookings/bookings";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {ItemDetailsPage} from "../pages/item-details/item-details";
     CityModal,
     ProfilePage,
     EditProfilePage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    RoomListPage,
+    BookingsPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import {ItemDetailsPage} from "../pages/item-details/item-details";
     CityModal,
     ProfilePage,
     EditProfilePage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    RoomListPage,
+    BookingsPage
   ],
     providers: [
     StatusBar,

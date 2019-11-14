@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Kempinski Mall of the Emirates</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only>
+        <ion-icon name="ios-heart-outline"></ion-icon>
+      </button>
+      <button ion-button clear icon-only>
+        <ion-icon name="md-share"></ion-icon>
+      </button>
+      <button ion-button clear icon-only>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-slides pager>
+      <ion-slide>
+        <img src="https://picsum.photos/500/300" alt="slider image">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://picsum.photos/500/300" alt="slider image">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://picsum.photos/500/300" alt="slider image">
+      </ion-slide>
+      <ion-slide>
+        <img src="https://picsum.photos/500/300" alt="slider image">
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="name-section" padding>
+    <h5>Kempinski Mall of the Emirates</h5>
+    <div class="rate">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+    </div>
+  </div>
+  <div class="page-separator"></div>
+  <div class="description-section" padding>
+    <h5>Description</h5>
+    <p>Facing the bay of Palm Island and over looking the Arabian Gulf, this luxury resort features of 0.6 mi of beach
+      front and 65 acres of lush gardens. One&Only Royal Mirage is a 10 minutes drive to Aquaventure waterp...</p>
+    <button ion-button clear>Read full description</button>
+  </div>
+  <div class="page-separator"></div>
+  <div class="reviews-section" padding>
+    <p>What guests talk about the most</p>
+    <ion-card>
+      <ion-card-content>
+        <h6>Beach</h6>
+        <p>very large private beach</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <h6>Room</h6>
+        <p>i thought it was over priced, for a standard room</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <h6>Breakfast</h6>
+        <p>the breakfast was amazing</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <button ion-button block (click)="openRoomList()">See your options</button>
+</ion-footer>

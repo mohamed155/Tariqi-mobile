@@ -51,6 +51,16 @@
   color: #ffffff;
 }
 
+.swiper-pagination-bullet-active {
+  background: color($colors, 'primary');
+}
+
+.page-separator {
+  background: #dedede;
+  width: 100%;
+  height: 10px;
+}
+
 //.home-section {
 //  &::after {
 //    content: '';

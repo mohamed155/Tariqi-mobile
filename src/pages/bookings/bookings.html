@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Bookings</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only><ion-icon name="md-add"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment>
+    <ion-segment-button>Past</ion-segment-button>
+    <ion-segment-button>Current</ion-segment-button>
+    <ion-segment-button>Upcoming</ion-segment-button>
+  </ion-segment>
+  <div class="list" padding text-center>
+    <ion-icon name="md-briefcase"></ion-icon>
+    <p>To see your reservations, you might need to import your bookings using your booking reference number and PIN, or sign in to your My booking.com account</p>
+  </div>
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button outline block>Import Booking</button>
+</ion-footer>
