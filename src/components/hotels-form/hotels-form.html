@@ -1,34 +1,42 @@
-<div class="search-section home-section" padding>
-  <h5>Hotels</h5>
-  <div class="search-box">
-    <ion-item no-lines>
-      <ion-label><ion-icon name="calendar"></ion-icon> Check-in date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-label><ion-icon name="calendar"></ion-icon> Check-out date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-label>Rooms</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-label>Adults</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-label>Children</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <ion-item (tap)="openCountryModal()">
-      <ion-label>Choose Country</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item (tap)="openCityModal()">
-      <ion-label>Choose City</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <button ion-button block (click)="openResults()">Search</button>
+<form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+  <div class="search-section home-section" padding>
+    <h5>Hotels</h5>
+    <div class="search-box">
+      <ion-item no-lines>
+        <ion-label>
+          <ion-icon name="calendar"></ion-icon>
+          Check-in date
+        </ion-label>
+        <ion-datetime formControlName="checkInDate" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>
+          <ion-icon name="calendar"></ion-icon>
+          Check-out date
+        </ion-label>
+        <ion-datetime formControlName="checkOutDate" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Rooms</ion-label>
+        <ion-input formControlName="rooms" type="number"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Adults</ion-label>
+        <ion-input formControlName="adults" type="number"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Children</ion-label>
+        <ion-input formControlName="children" type="number"></ion-input>
+      </ion-item>
+      <ion-item (tap)="openCountryModal()">
+        <ion-label>Choose Country</ion-label>
+        <ion-input formControlName="country"></ion-input>
+      </ion-item>
+      <ion-item (tap)="country && openCityModal()">
+        <ion-label>Choose City</ion-label>
+        <ion-input formControlName="city" [disabled]="!country"></ion-input>
+      </ion-item>
+      <button type="submit" ion-button block>Search</button>
+    </div>
   </div>
-</div>
+</form>

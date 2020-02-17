@@ -3,7 +3,7 @@
     <ion-buttons style="order: 0">
       <button ion-button icon-only clear round color="light" (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
     </ion-buttons>
-    <ion-title>Choose Country</ion-title>
+    <ion-title>Choose {{type}}</ion-title>
   </ion-navbar>
   <ion-toolbar>
     <ion-searchbar></ion-searchbar>
@@ -12,17 +12,6 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
-    <button ion-item>Country 1</button>
+    <button ion-item *ngFor="let location of locations" (click)="choose(location)">{{location.name}}</button>
   </ion-list>
 </ion-content>

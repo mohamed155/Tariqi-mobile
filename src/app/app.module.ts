@@ -16,6 +16,10 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import {ItemDetailsPage} from "../pages/item-details/item-details";
 import {RoomListPage} from "../pages/room-list/room-list";
 import {BookingsPage} from "../pages/bookings/bookings";
+import {ConfigProvider} from "../providers/config";
+import {SharedProvider} from "../providers/shared";
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import {BookingsPage} from "../pages/bookings/bookings";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,10 +57,12 @@ import {BookingsPage} from "../pages/bookings/bookings";
     RoomListPage,
     BookingsPage
   ],
-    providers: [
+  providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConfigProvider,
+    SharedProvider
   ]
 })
 export class AppModule {
