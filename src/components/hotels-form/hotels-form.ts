@@ -20,8 +20,8 @@ export class HotelsForm {
     checkInDate: [''],
     checkOutDate: [''],
     country: [''],
-    city: [''],
-    rooms: [''],
+    city: [{value: '', disabled: !this.country}],
+    // rooms: [''],
     adults: [''],
     children: ['']
   });
@@ -64,7 +64,7 @@ export class HotelsForm {
   }
 
   onSubmit() {
-
+    this.navCtrl.push(SearchResultsPage, {type: "hotels", form: this.hotelForm, city_id: this.city_id});
   }
 
 }
