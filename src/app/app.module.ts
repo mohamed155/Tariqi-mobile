@@ -6,7 +6,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
-import {LoginPage} from "../pages/login/login";
+import {StartPage} from "../pages/start/start";
 import {HotelsForm} from "../components/hotels-form/hotels-form";
 import {CountryModal} from "../components/country-modal/country-modal";
 import {SearchResultsPage} from "../pages/search-results/search-results";
@@ -20,12 +20,13 @@ import {ConfigProvider} from "../providers/config";
 import {SharedProvider} from "../providers/shared";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import {HelperProvider} from "../providers/helper";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage,
+    StartPage,
     HotelsForm,
     CountryModal,
     SearchResultsPage,
@@ -46,7 +47,7 @@ import {ReactiveFormsModule} from "@angular/forms";
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage,
+    StartPage,
     HotelsForm,
     CountryModal,
     SearchResultsPage,
@@ -62,7 +63,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConfigProvider,
-    SharedProvider
+    SharedProvider,
+    HelperProvider
   ]
 })
 export class AppModule {

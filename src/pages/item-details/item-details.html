@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Kempinski Mall of the Emirates</ion-title>
+    <ion-title>{{hotel.title}}</ion-title>
     <ion-buttons end>
       <button ion-button clear icon-only>
         <ion-icon name="ios-heart-outline"></ion-icon>
@@ -17,57 +17,47 @@
 
 <ion-content>
   <div>
-    <ion-slides pager>
-      <ion-slide>
-        <img src="https://picsum.photos/500/300" alt="slider image">
-      </ion-slide>
-      <ion-slide>
-        <img src="https://picsum.photos/500/300" alt="slider image">
-      </ion-slide>
-      <ion-slide>
-        <img src="https://picsum.photos/500/300" alt="slider image">
-      </ion-slide>
-      <ion-slide>
-        <img src="https://picsum.photos/500/300" alt="slider image">
+    <ion-slides pager *ngIf="hotel.sliderImages">
+      <ion-slide *ngFor="let image of hotel.sliderImages">
+        <img [src]="image.fullImage" alt="slider image">
       </ion-slide>
     </ion-slides>
   </div>
   <div class="name-section" padding>
-    <h5>Kempinski Mall of the Emirates</h5>
+    <h5>{{hotel.title}}</h5>
     <div class="rate">
-      <ion-icon name="star"></ion-icon>
-      <ion-icon name="star"></ion-icon>
-      <ion-icon name="star"></ion-icon>
-      <ion-icon name="star"></ion-icon>
-      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star" *ngFor="let item of helper.makeArray(hotel.starsCount)"></ion-icon>
     </div>
   </div>
   <div class="page-separator"></div>
   <div class="description-section" padding>
     <h5>Description</h5>
-    <p>Facing the bay of Palm Island and over looking the Arabian Gulf, this luxury resort features of 0.6 mi of beach
-      front and 65 acres of lush gardens. One&Only Royal Mirage is a 10 minutes drive to Aquaventure waterp...</p>
-    <button ion-button clear>Read full description</button>
+    <p>{{hotel.desc}}</p>
+    <!--<button ion-button clear>Read full description</button>-->
   </div>
   <div class="page-separator"></div>
-  <div class="reviews-section" padding>
+  <div class="description-section" padding>
+    <h5>Amenities</h5>
+    <ion-row>
+      <ion-col col-6 *ngFor="let amenity of hotel.amenities">
+        <div class="hotel-amenity">
+          <img [src]="amenity.icon">
+          <span>{{amenity.name}}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!--<button ion-button clear>Read full description</button>-->
+  </div>
+  <div class="page-separator"></div>
+  <div class="reviews-section" padding *ngIf="reviews">
+    <h5>Reviews</h5>
     <p>What guests talk about the most</p>
-    <ion-card>
+    <ion-card *ngFor="let review of reviews">
       <ion-card-content>
-        <h6>Beach</h6>
-        <p>very large private beach</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <h6>Room</h6>
-        <p>i thought it was over priced, for a standard room</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <h6>Breakfast</h6>
-        <p>the breakfast was amazing</p>
+        <h2>{{review.review_name}}</h2>
+        <span class="review-rate">{{review.review_overall}}</span>
+        <span class="date">{{review.review_date}}</span>
+        <p margin-top>{{review.review_comment}}</p>
       </ion-card-content>
     </ion-card>
   </div>

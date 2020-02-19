@@ -3,7 +3,7 @@ page-search-results {
     display: flex;
 
     img {
-      max-width: 110px;
+      max-width: 33%;
       object-fit: cover;
     }
 
@@ -17,6 +17,7 @@ page-search-results {
 
     .location {
       font-size: 12px;
+      margin-top: 10px;
     }
 
     .room-type {
@@ -36,6 +37,17 @@ page-search-results {
     .warning {
       font-size: 10px;
       color: red;
+    }
+
+    .card-info {
+      flex: 1;
+      position: relative;
+    }
+
+    .like-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 }

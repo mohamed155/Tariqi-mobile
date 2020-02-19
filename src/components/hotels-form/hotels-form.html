@@ -36,7 +36,7 @@
         <ion-label>Choose City</ion-label>
         <ion-input formControlName="city" [disabled]="!country"></ion-input>
       </ion-item>
-      <button type="submit" ion-button block>Search</button>
+      <button type="submit" ion-button block [disabled]="!hotelForm.valid || !city_id">Search</button>
     </div>
   </div>
 </form>

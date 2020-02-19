@@ -5,7 +5,7 @@ import {SearchResultsPage} from "../../pages/search-results/search-results";
 import {CityModal} from "../city-modal/city-modal";
 import {ConfigProvider} from "../../providers/config";
 import {SharedProvider} from "../../providers/shared";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'hotels-form',
@@ -17,13 +17,13 @@ export class HotelsForm {
   city_id;
 
   hotelForm = this.fb.group({
-    checkInDate: [''],
-    checkOutDate: [''],
-    country: [''],
-    city: [{value: '', disabled: !this.country}],
+    checkInDate: [`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`, [Validators.required]],
+    checkOutDate: [`${new Date().getMonth()+1}/${new Date().getDate() + 2}/${new Date().getFullYear()}`, [Validators.required]],
+    country: ['', [Validators.required]],
+    city: [{value: '',disabled: !this.country}, [Validators.required]],
     // rooms: [''],
-    adults: [''],
-    children: ['']
+    adults: ['2', [Validators.required]],
+    children: ['0', [Validators.required]]
   });
 
   constructor(

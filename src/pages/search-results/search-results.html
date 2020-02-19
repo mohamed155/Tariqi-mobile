@@ -5,179 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card no-padding (click)="openDetails()">
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
+  <ion-card no-padding (click)="openDetails(hotel)" *ngFor="let hotel of hotelList">
+    <img [src]="hotel.thumbnail" alt="image" float-left />
     <div class="card-info" padding>
       <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
+        <h4 class="name">{{hotel.title}}</h4>
         <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star" *ngFor="let item of helper.makeArray(hotel.starsCount)"></ion-icon>
         </div>
         <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
+          <ion-icon name="md-locate"></ion-icon> {{hotel.location}}
         </div>
       </div>
       <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
+        <!--<h6 class="room-type">Superior room</h6>-->
+        <h3 class="price">{{hotel.currCode}} {{hotel.price}}</h3>
+        <!--<p class="extra">+ EGP 897 taxes and charges</p>-->
+        <!--<p class="warning">only 4 left</p>-->
+        <!--<div class="advantage"></div>-->
       </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
-    </div>
-  </ion-card>
-  <ion-card no-padding>
-    <img src="https://picsum.photos/200/300" alt="image" float-left />
-    <div class="card-info" padding>
-      <div class="left" text-left margin-bottom>
-        <h4 class="name">Kempinski Mall of the Emirates</h4>
-        <div class="rate">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-        <div class="location">
-          <ion-icon name="md-locate"></ion-icon> Al Barsha . 7.1 miles from downtown / center
-        </div>
-      </div>
-      <div class="right" text-right>
-        <h6 class="room-type">Superior room</h6>
-        <h3 class="price">EGP 3,597</h3>
-        <p class="extra">+ EGP 897 taxes and charges</p>
-        <p class="warning">only 4 left</p>
-        <div class="advantage"></div>
-      </div>
+      <button ion-button icon-only clear class="like-btn">
+        <ion-icon name="md-heart-outline"></ion-icon>
+      </button>
     </div>
   </ion-card>
 </ion-content>

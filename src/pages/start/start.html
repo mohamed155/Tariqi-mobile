@@ -1,0 +1,68 @@
+<ion-header>
+  <button ion-button clear icon-only round class="close-btn" color="light" (click)="openHome()" *ngIf="view == 'start'">
+    <ion-icon name="close"></ion-icon>
+  </button>
+  <button ion-button clear icon-only round class="close-btn" color="light" (click)="view = 'start'" *ngIf="view != 'start'">
+    <ion-icon name="md-arrow-back"></ion-icon>
+  </button>
+</ion-header>
+
+<ion-content padding>
+  <div class="rootView" [ngSwitch]="view">
+    <div class="logo-container" text-center *ngSwitchCase="'start'">
+      <img src="assets/imgs/logo-white.png" alt="logo" />
+    </div>
+    <div class="login-container" *ngSwitchCase="'login'">
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>Sign In</ion-card-title>
+          <ion-item>
+            <ion-label floating>Email Address</ion-label>
+            <ion-input #login></ion-input>
+          </ion-item>
+          <button ion-button block>Next</button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="login-container" *ngSwitchCase="'register'">
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>Create an account</ion-card-title>
+          <ion-item>
+            <ion-label floating>Email Address</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <button ion-button block>Next</button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer padding *ngIf="view == 'start'">
+  <div class="buttons-container">
+    <button ion-button block color="facebook" margin-top>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Continue with Facebook
+    </button>
+    <button ion-button block margin-top (click)="view = 'login'">
+      <ion-icon name="md-mail"></ion-icon>
+      Continue with Email
+    </button>
+    <div class="or-separator">
+      <div class="sep-line"></div>
+      <span>Or</span>
+      <div class="sep-line"></div>
+    </div>
+    <button ion-button outline block color="light" class="signup-btn" (click)="view = 'register'">
+      <ion-icon name="md-person-add"></ion-icon>
+      Create your account
+    </button>
+    <p>By creating or logging into an account you're agreeing with our <a href="#">Terms & Condition</a>
+      and <a href="#">Privacy Statement</a> </p>
+  </div>
+</ion-footer>

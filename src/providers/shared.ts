@@ -29,4 +29,8 @@ export class SharedProvider {
       &checkout=${searchDate.checkOutDate}
       &offset=${offset}`)
   }
+
+  public getHotelDetails(hotel_id: number) {
+    return this.http.get(this.config.api_url + 'api/hotels/hotelDetails?appKey=' + this.config.api_key + '&id=' + hotel_id);
+  }
 }

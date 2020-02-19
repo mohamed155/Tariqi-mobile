@@ -15,4 +15,40 @@ page-item-details {
       height: 44px;
     }
   }
+
+  .date {
+    color: #888;
+  }
+
+  p {
+    color: #444;
+  }
+
+  .review-rate {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 29px;
+    color: #ffffff;
+    padding: 4px;
+    border-radius: 3px;
+    background-color: color($colors, 'primary');
+    text-align: center;
+  }
+
+  .card-content {
+    position: relative;
+  }
+
+  .hotel-amenity {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+  }
 }

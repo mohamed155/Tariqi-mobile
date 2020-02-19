@@ -4,13 +4,12 @@ import {ProfilePage} from "../../components/profile/profile";
 import {BookingsPage} from "../bookings/bookings";
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-hotel-details',
+  templateUrl: 'hotel-details.html'
 })
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
   }
-
 }
