@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {ConfigProvider} from "./config";
 import {Observable} from "rxjs";
 import {SearchHotelsData} from "../models/SearchHotelsData";
+import {SignupForm} from "../models/SignupForm";
 
 @Injectable()
 export class SharedProvider {
@@ -32,5 +33,9 @@ export class SharedProvider {
 
   public getHotelDetails(hotel_id: number) {
     return this.http.get(this.config.api_url + 'api/hotels/hotelDetails?appKey=' + this.config.api_key + '&id=' + hotel_id);
+  }
+
+  public signup(form: SignupForm) {
+    return this.http.post(this.config.api_url + 'api/login/signup?appKey=' + this.config.api_key, form);
   }
 }
