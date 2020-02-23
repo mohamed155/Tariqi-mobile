@@ -1,12 +1,15 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ConfigProvider} from "./config";
 import {Observable} from "rxjs";
 import {SearchHotelsData} from "../models/SearchHotelsData";
 import {SignupForm} from "../models/SignupForm";
+import {SigninForm} from "../models/SigninForm";
 
 @Injectable()
 export class SharedProvider {
+
+  public loggedUser = null;
 
   constructor(
     public http: HttpClient,
@@ -36,6 +39,16 @@ export class SharedProvider {
   }
 
   public signup(form: SignupForm) {
-    return this.http.post(this.config.api_url + 'api/login/signup?appKey=' + this.config.api_key, form);
+    const headersJson = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(this.config.api_url + 'api/login/signup?appKey=' + this.config.api_key, form, {
+      headers: headersJson
+    });
+  }
+
+  public signin(form: SigninForm) {
+    const headersJson = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(this.config.api_url + 'api/login/check?appKey=' + this.config.api_key, form, {
+      headers: headersJson
+    });
   }
 }
