@@ -1,0 +1,26 @@
+<ion-card no-padding (click)="openDetails()">
+  <img [src]="hotel.thumbnail">
+  <button ion-button icon-only clear class="like-btn">
+    <ion-icon name="md-heart-outline"></ion-icon>
+  </button>
+  <ion-card-content>
+    <div class="card-info">
+      <div class="left" text-left margin-bottom>
+        <h4 class="name">{{hotel.title}}</h4>
+        <div class="rate">
+          <ion-icon name="star" *ngFor="let item of helper.makeArray(hotel.starsCount)"></ion-icon>
+        </div>
+        <div class="location">
+          <ion-icon name="md-locate"></ion-icon> {{hotel.location}}
+        </div>
+      </div>
+      <div class="right" text-right>
+        <!--<h6 class="room-type">Superior room</h6>-->
+        <h3 class="price">{{hotel.currCode}} {{hotel.price}}</h3>
+        <!--<p class="extra">+ EGP 897 taxes and charges</p>-->
+        <!--<p class="warning">only 4 left</p>-->
+        <!--<div class="advantage"></div>-->
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

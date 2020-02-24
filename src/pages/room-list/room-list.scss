@@ -8,4 +8,26 @@ page-room-list {
       height: 46px;
     }
   }
+
+  //.advs {
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //
+    .amenity {
+      display: flex;
+      white-space: nowrap;
+
+      img {
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+      }
+
+      span {
+        flex: 1;
+        white-space: normal;
+        font-size: 10px;
+      }
+    }
+  //}
 }

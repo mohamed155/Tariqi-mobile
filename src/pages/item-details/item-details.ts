@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {AlertController, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {RoomListPage} from "../room-list/room-list";
 import {Hotel} from "../../models/Hotel";
@@ -8,6 +8,8 @@ import {AppResponse} from "../../models/AppResponse";
 import {Room} from "../../models/Room";
 import {AverageReviews} from "../../models/AverageReviews";
 import {Review} from "../../models/Review";
+
+declare var google;
 
 @Component({
   selector: 'page-item-details',
@@ -19,6 +21,9 @@ export class ItemDetailsPage {
   rooms: Room[];
   reviews: Review[];
   averageReviews: AverageReviews;
+
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
 
   constructor(
     public navCtrl: NavController,
@@ -47,12 +52,42 @@ export class ItemDetailsPage {
         this.rooms = data.response.rooms;
         this.reviews = data.response.reviews;
         this.averageReviews = data.response.avgReviews;
+        this.loadMap();
       }
     });
   }
 
+  loadMap() {
+
+    let latLng = new google.maps.LatLng(this.hotel.latitude, this.hotel.longitude);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
+
+    let content = this.hotel.mapAddress;
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+  }
+
   openRoomList() {
-    this.navCtrl.push(RoomListPage);
+    this.navCtrl.push(RoomListPage, {rooms: this.rooms});
   }
 
 }

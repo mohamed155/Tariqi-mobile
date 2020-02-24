@@ -21,6 +21,7 @@ import {SharedProvider} from "../providers/shared";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HelperProvider} from "../providers/helper";
+import {HotelBox} from "../components/hotel-box/hotel-box";
 
 @NgModule({
   declarations: [
@@ -35,13 +36,14 @@ import {HelperProvider} from "../providers/helper";
     EditProfilePage,
     ItemDetailsPage,
     RoomListPage,
-    BookingsPage
+    BookingsPage,
+    HotelBox
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +58,8 @@ import {HelperProvider} from "../providers/helper";
     EditProfilePage,
     ItemDetailsPage,
     RoomListPage,
-    BookingsPage
+    BookingsPage,
+    HotelBox
   ],
   providers: [
     StatusBar,

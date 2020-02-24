@@ -30,6 +30,37 @@
     </div>
   </div>
   <div class="page-separator"></div>
+  <div class="map-section">
+    <div #map id="map"></div>
+    <div class="location" *ngIf="hotel.mapAddress" padding>
+      {{hotel.mapAddress}}
+    </div>
+  </div>
+  <div class="page-separator"></div>
+  <div class="average-reviews-section" *ngIf="averageReviews" padding>
+    <h5>Average rates</h5>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <strong>Overview: {{averageReviews.overall}}</strong>
+      </ion-col>
+      <ion-col col-6>
+        Clean: {{averageReviews.clean}}
+      </ion-col>
+      <ion-col col-6>
+        Comfort: {{averageReviews.comfort}}
+      </ion-col>
+      <ion-col col-6>
+        Location: {{averageReviews.location}}
+      </ion-col>
+      <ion-col col-6>
+        Facilities: {{averageReviews.facilities}}
+      </ion-col>
+      <ion-col col-6>
+        Staff: {{averageReviews.staff}}
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="page-separator"></div>
   <div class="description-section" padding>
     <h5>Description</h5>
     <p>{{hotel.desc}}</p>
@@ -60,6 +91,32 @@
         <p margin-top>{{review.review_comment}}</p>
       </ion-card-content>
     </ion-card>
+  </div>
+  <div class="page-separator"></div>
+  <div class="payment-options" *ngIf="hotel.paymentOptions">
+    <h5 margin-left>Payment options</h5>
+    <ion-list>
+      <ion-item *ngFor="let payment of hotel.paymentOptions">
+        <ion-avatar item-start>
+          <img [src]="payment.icon">
+        </ion-avatar>
+        <h2>{{payment.name}}</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="page-separator"></div>
+  <div class="policy-section" padding>
+    <h5>Policy</h5>
+    <p>{{hotel.policy}}</p>
+  </div>
+  <div class="page-separator"></div>
+  <div class="related-items-section" padding>
+    <h5>Related Items</h5>
+    <ion-slides slidesPerView="1.7">
+      <ion-slide *ngFor="let item of hotel.relatedItems">
+        <hotel-box [hotel]="item"></hotel-box>
+      </ion-slide>
+    </ion-slides>
   </div>
 </ion-content>
 

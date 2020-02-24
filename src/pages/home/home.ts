@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {ProfilePage} from "../../components/profile/profile";
 import {BookingsPage} from "../bookings/bookings";
+import {SharedProvider} from "../../providers/shared";
+import {StartPage} from "../start/start";
 
 @Component({
   selector: 'page-home',
@@ -11,7 +13,10 @@ export class HomePage {
 
   tabView = 'hotels';
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public shared: SharedProvider
+  ) {
 
   }
 
@@ -21,6 +26,10 @@ export class HomePage {
 
   openBookings() {
     this.navCtrl.push(BookingsPage);
+  }
+
+  openStart() {
+    this.navCtrl.push(StartPage);
   }
 
 }

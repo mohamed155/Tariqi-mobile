@@ -1,0 +1,58 @@
+hotel-box {
+  .card {
+    //display: flex;
+    //
+    //img {
+    //  max-width: 33%;
+    //  object-fit: cover;
+    //}
+
+    position: relative;
+
+    .name {
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rate {
+      color: gold;
+    }
+
+    .location {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .room-type {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .price {
+      font-size: 22px;
+    }
+
+    .extra {
+      font-size: 10px;
+      color: gray;
+    }
+
+    .warning {
+      font-size: 10px;
+      color: red;
+    }
+
+    .card-info {
+      flex: 1;
+      position: relative;
+    }
+
+    .like-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

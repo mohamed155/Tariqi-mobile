@@ -1,4 +1,9 @@
 page-item-details {
+
+  #map {
+    height: 200px;
+  }
+
   .slides {
     height: 221px;
   }
@@ -49,6 +54,12 @@ page-item-details {
       height: 20px;
       object-fit: contain;
       margin-right: 10px;
+    }
+  }
+
+  .related-items-section {
+    .swiper-container, .siwper-wrapper, .swiper-slide {
+      height: max-content;
     }
   }
 }
