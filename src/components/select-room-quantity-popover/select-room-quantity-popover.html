@@ -1,0 +1,4 @@
+<ion-list>
+  <button ion-item class="cancel-btn" (click)="cancel()">Cancel</button>
+  <button ion-item *ngFor="let counter of roomCounter" (click)="select(counter)">{{counter}} rooms</button>
+</ion-list>

@@ -22,6 +22,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HelperProvider} from "../providers/helper";
 import {HotelBox} from "../components/hotel-box/hotel-box";
+import {HotelsListPopoverMenu} from "../components/hotels-list-popover-menu/hotels-list-popover-menu";
+import {RoomDetailsPage} from "../pages/room-details/room-details";
+import {SelectRoomQuantityPopover} from "../components/select-room-quantity-popover/select-room-quantity-popover";
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {HotelBox} from "../components/hotel-box/hotel-box";
     ItemDetailsPage,
     RoomListPage,
     BookingsPage,
-    HotelBox
+    HotelBox,
+    HotelsListPopoverMenu,
+    RoomDetailsPage,
+    SelectRoomQuantityPopover
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,10 @@ import {HotelBox} from "../components/hotel-box/hotel-box";
     ItemDetailsPage,
     RoomListPage,
     BookingsPage,
-    HotelBox
+    HotelBox,
+    HotelsListPopoverMenu,
+    RoomDetailsPage,
+    SelectRoomQuantityPopover
   ],
   providers: [
     StatusBar,

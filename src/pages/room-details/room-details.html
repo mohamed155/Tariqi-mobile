@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Room details</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only>
+        <ion-icon name="md-share"></ion-icon>
+      </button>
+      <button ion-button clear icon-only>
+        <ion-icon name="logo-usd"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-slides pager *ngIf="room.Images">
+      <ion-slide *ngFor="let image of room.Images">
+        <img [src]="image.fullImage" alt="slider image">
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="name-section" padding>
+    <h5>{{room.title}}</h5>
+    <p>Price for {{room.maxAdults}} adults and {{room.maxChild}} Child</p>
+  </div>
+</ion-content>

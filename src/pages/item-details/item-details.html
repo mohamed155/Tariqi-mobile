@@ -8,7 +8,7 @@
       <button ion-button clear icon-only>
         <ion-icon name="md-share"></ion-icon>
       </button>
-      <button ion-button clear icon-only>
+      <button ion-button clear icon-only (click)="openPopoverMenu($event)">
         <ion-icon name="md-more"></ion-icon>
       </button>
     </ion-buttons>
@@ -98,7 +98,7 @@
     <ion-list>
       <ion-item *ngFor="let payment of hotel.paymentOptions">
         <ion-avatar item-start>
-          <img [src]="payment.icon">
+          <img [src]="payment.icon" (error)="imageFailed($event)">
         </ion-avatar>
         <h2>{{payment.name}}</h2>
       </ion-item>

@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {AlertController, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, LoadingController, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {RoomListPage} from "../room-list/room-list";
 import {Hotel} from "../../models/Hotel";
 import {HelperProvider} from "../../providers/helper";
@@ -8,6 +8,7 @@ import {AppResponse} from "../../models/AppResponse";
 import {Room} from "../../models/Room";
 import {AverageReviews} from "../../models/AverageReviews";
 import {Review} from "../../models/Review";
+import {HotelsListPopoverMenu} from "../../components/hotels-list-popover-menu/hotels-list-popover-menu";
 
 declare var google;
 
@@ -31,7 +32,8 @@ export class ItemDetailsPage {
     public helper: HelperProvider,
     public shared: SharedProvider,
     public loadingCtrl: LoadingController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public popoverCtrl: PopoverController
   ) {
     this.hotel = this.navParams.get('hotel');
   }
@@ -88,6 +90,25 @@ export class ItemDetailsPage {
 
   openRoomList() {
     this.navCtrl.push(RoomListPage, {rooms: this.rooms});
+  }
+
+  imageFailed(event) {
+    event.target.src = 'assets/icon/checkmark.png';
+  }
+
+  openPopoverMenu(event) {
+    const popover = this.popoverCtrl.create(HotelsListPopoverMenu);
+    let ev = {
+      target : {
+        getBoundingClientRect : () => {
+          return {
+            top: event.y,
+            left: event.x
+          };
+        }
+      }
+    };
+    popover.present({ev});
   }
 
 }

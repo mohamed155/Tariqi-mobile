@@ -14,21 +14,42 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let room of rooms; let i = index">
+  <ion-card [ngClass]="{'selected': selectedRooms[i] && room.id == selectedRooms[i].id}" *ngFor="let room of rooms; let i = index">
     <ion-card-content>
-      <h6 class="name">{{room.title}}</h6>
-      <p>Price for: {{room.maxAdults}} Adults and {{room.maxChild}}</p>
-      <p>Extra beds: {{room.extraBeds}} bed</p>
-      <ion-row class="advs">
-        <ion-col col-6 *ngFor="let amenity of room.Amenities">
-          <span class="amenity"><img [src]="amenity.icon" (error)="imageFailed($event)"> <span>{{amenity.name}}</span></span>
+      <div (click)="openRoomDetails(room)">
+        <h6 class="name">{{room.title}}</h6>
+        <p>Price for: {{room.maxAdults}} Adults and {{room.maxChild}} Child</p>
+        <p *ngIf="room.extraBeds">Extra beds: {{room.extraBeds}} bed</p>
+        <!--<ion-row class="advs">-->
+        <!--<ion-col col-6 *ngFor="let amenity of room.Amenities">-->
+        <!--<span class="amenity"><img [src]="amenity.icon" (error)="imageFailed($event)"> <span>{{amenity.name}}</span></span>-->
+        <!--</ion-col>-->
+        <!--</ion-row>-->
+        <div class="price" text-right>
+          <h1>{{room.currCode}} {{room.price}}</h1>
+          <p *ngIf="room.extrabedCharges">{{room.currCode}} {{room.extrabedCharges}} extra bed charges</p>
+        </div>
+      </div>
+      <ion-row *ngIf="!selectedRooms[i] || room.id != selectedRooms[i].id">
+        <ion-col>
+          <button ion-button outline block (click)="selectRoom(room, i)">Select</button>
         </ion-col>
       </ion-row>
-      <div class="price" text-right>
-        <h1>{{room.currCode}} {{room.price}}</h1>
-        <p *ngIf="room.extrabedCharges">{{room.currCode}} {{room.extrabedCharges}} extra bed charges</p>
-      </div>
-      <button ion-button outline block (click)="selectRoom(room)">Select</button>
+      <ion-row *ngIf="selectedRooms[i] && room.id == selectedRooms[i].id">
+        <ion-col col-10>
+          <button ion-button outline block (click)="selectQuantity($event, room, i)">
+            <div class="btn-dropdown">
+              <span>{{selectedRooms[i].quantity}} room selected</span>
+              <ion-icon name="arrow-dropdown"></ion-icon>
+            </div>
+          </button>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button outline block (click)="deselectRoom(i)">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

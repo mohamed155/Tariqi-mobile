@@ -1,4 +1,8 @@
 page-room-list {
+  .card {
+    border: solid 1px transparent;
+  }
+
   .name {
     font-weight: bold;
   }
@@ -16,6 +20,7 @@ page-room-list {
     .amenity {
       display: flex;
       white-space: nowrap;
+      align-items: center;
 
       img {
         width: 10px;
@@ -29,5 +34,16 @@ page-room-list {
         font-size: 10px;
       }
     }
+
+  .selected {
+    border: solid 1px color($colors, 'primary');
+  }
+
+  .btn-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
   //}
 }
