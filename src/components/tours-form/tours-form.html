@@ -1,0 +1,34 @@
+<form [formGroup]="tourForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+  <div class="search-section home-section" padding>
+    <h5>Tours</h5>
+    <div class="search-box">
+      <ion-item (tap)="openCountryModal()" no-lines>
+        <ion-label>Choose Country</ion-label>
+        <ion-input formControlName="country"></ion-input>
+      </ion-item>
+      <ion-item (tap)="country && openCityModal()" no-lines>
+        <ion-label>Choose City</ion-label>
+        <ion-input formControlName="city" [disabled]="!country"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>
+          Type
+        </ion-label>
+        <ion-select formGroupName="type">
+          <ion-option *ngFor="let type of tourTypes" [value]="type.id">{{type.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Guests</ion-label>
+        <ion-input formControlName="guests" type="number"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>
+          Date
+        </ion-label>
+        <ion-datetime formControlName="date" displayFormat="MM/DD/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
+      </ion-item>
+      <button type="submit" ion-button block [disabled]="!tourForm.valid">Search</button>
+    </div>
+  </div>
+</form>

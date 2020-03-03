@@ -25,6 +25,7 @@ import {HotelBox} from "../components/hotel-box/hotel-box";
 import {HotelsListPopoverMenu} from "../components/hotels-list-popover-menu/hotels-list-popover-menu";
 import {RoomDetailsPage} from "../pages/room-details/room-details";
 import {SelectRoomQuantityPopover} from "../components/select-room-quantity-popover/select-room-quantity-popover";
+import {ToursForm} from "../components/tours-form/tours-form";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {SelectRoomQuantityPopover} from "../components/select-room-quantity-popo
     HotelBox,
     HotelsListPopoverMenu,
     RoomDetailsPage,
-    SelectRoomQuantityPopover
+    SelectRoomQuantityPopover,
+    ToursForm
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import {SelectRoomQuantityPopover} from "../components/select-room-quantity-popo
     HotelBox,
     HotelsListPopoverMenu,
     RoomDetailsPage,
-    SelectRoomQuantityPopover
+    SelectRoomQuantityPopover,
+    ToursForm
   ],
   providers: [
     StatusBar,

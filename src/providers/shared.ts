@@ -14,7 +14,8 @@ export class SharedProvider {
   constructor(
     public http: HttpClient,
     public config: ConfigProvider
-  ) {}
+  ) {
+  }
 
   public fetchLocations(type, countryName = "") {
     if (type == 'country')
@@ -26,12 +27,7 @@ export class SharedProvider {
 
   public searchHotels(searchDate: SearchHotelsData, offset = 1) {
     return this.http.get(this.config.api_url + 'api/hotels/search?appKey=' + this.config.api_key
-      + `&searching=${searchDate.city_id}
-      &adults=${searchDate.adults}
-      &child=${searchDate.children}
-      &checkin=${searchDate.checkInDate}
-      &checkout=${searchDate.checkOutDate}
-      &offset=${offset}`)
+      + `&searching=${searchDate.city_id}&adults=${searchDate.adults}&child=${searchDate.children}&checkin=${searchDate.checkInDate}&checkout=${searchDate.checkOutDate}&offset=${offset}`)
   }
 
   public getHotelDetails(hotel_id: number) {
@@ -50,5 +46,9 @@ export class SharedProvider {
     return this.http.post(this.config.api_url + 'api/login/check?appKey=' + this.config.api_key, form, {
       headers: headersJson
     });
+  }
+
+  public getTourTypes(locationId: number) {
+    return this.http.get(this.config.api_url + 'api/tours/tourTypes?appKey=' + this.config.api_key + '&location=' + locationId);
   }
 }
